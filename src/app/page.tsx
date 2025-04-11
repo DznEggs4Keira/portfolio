@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -25,7 +24,7 @@ export default function Home() {
             </p>
             
             <p>
-              I am also looking to explore any new opportunities to work alongside teams at the numerous games studios. Please don't hesitate to reach out for any possible opportunities, freelance, remote or on-site. Don't hesitate to contact me and reach out so that we may get to know each other.
+              I am also looking to explore any new opportunities to work alongside teams at the numerous games studios. Please don&apos;t hesitate to reach out for any possible opportunities, freelance, remote or on-site. Don&apos;t hesitate to contact me and reach out so that we may get to know each other.
             </p>
           </div>
         </div>
@@ -77,7 +76,7 @@ export default function Home() {
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="/contact"
         >
-          Let's Work Together
+          Let&apos;s Work Together
         </Link>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
