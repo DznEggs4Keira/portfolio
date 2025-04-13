@@ -9,30 +9,30 @@ export default function Contact() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium">Email</h3>
-                <a href="mailto:your.email@example.com" className="text-blue-600 hover:underline">
-                  your.email@example.com
+                <a href="mailto:zainab_ali96@outlook.com" className="text-blue-600 hover:underline">
+                zainab_ali96@outlook.com
                 </a>
               </div>
               <div>
                 <h3 className="text-lg font-medium">LinkedIn</h3>
                 <a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://www.linkedin.com/in/zainab-ali-a15077181/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                  linkedin.com/in/yourusername
+                  linkedin.com/in/zainab-ali-a15077181/
                 </a>
               </div>
               <div>
                 <h3 className="text-lg font-medium">GitHub</h3>
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/DznEggs4Keira" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                  github.com/yourusername
+                  github.com/DznEggs4Keira
                 </a>
               </div>
               {/* Add other social profiles as needed */}
@@ -85,7 +85,7 @@ export default function Contact() {
             Download my resume to learn more about my experience and skills.
           </p>
           <a 
-            href="/your-resume.pdf" 
+            href="/Zainab CV.pdf" 
             download
             className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors inline-flex items-center"
           >
