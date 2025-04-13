@@ -1,73 +1,7 @@
+import { skillStack } from "@/data/about";
+import { timelineEvents } from "@/data/about";
+
 export default function About() {
-  // Tech skills data
-  const techSkills = [
-    "Unity Engine",
-    "Unreal Engine",
-    "C#",
-    "C++",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "NextJS",
-    "ThreeJS",
-    "Game Design",
-    "Game Mechanics",
-    "Narrative Design",
-    "Level Design",
-  ];
-
-  // Social skills data
-  const socialSkills = [
-    "Team Leadership",
-    "Project Management",
-    "Communication",
-    "Problem Solving",
-    "Collaboration",
-    "Adaptability",
-    "Vibe Coding",
-  ];
-
-  // Timeline data
-  const timelineEvents = [
-    {
-      year: "2024 - Present",
-      title: "Junior Software Developer at AHEAD Automotive GmbH",
-      description:
-        "Working on Qira, a AI Repair assistant for mechanics. Developing features and improving user experience. Also provide technical support for company software (Google Workspace, CRM, etc.).",
-    },
-    {
-      year: "2022 - 2024",
-      title: "Internship Games Programmer at Ergofox GmbH",
-      description:
-        "Created several prototypes exploring different genres and mechanics for Ergogames, a subset of serious games focused on health and preventive care.",
-    },
-    {
-      year: "2021 - 2024",
-      title: "Freelance Game Developer at BlueGoo Games",
-      description:
-        "Worked on SpaceChef, an upcoming space exploring, cooking game with a twist. Developed core gameplay mechanics and collaborated with artists to create engaging environments.",
-    },
-    {
-      year: "2019 - 2021",
-      title: "Games Programming Exploration",
-      description:
-        "Started taking online courses to further hone my skills in the arts of videogame programming. Explored various game engines and programming languages.",
-    },
-    {
-      year: "2018 - 2019",
-      title:
-        "Master's Degree in Computer Games Technology at Abertay University",
-      description:
-        "Graduated with merit. Focused on game development, programming, and design. Developed a strong foundation in game mechanics and narrative design.",
-    },
-    {
-      year: "2015 - 2018",
-      title: "Bachelor's Degree in Computer Science at Mazoon University",
-      description:
-        "Graduated with distinction. Studied computer science fundamentals, programming languages, and software development.",
-    },
-  ];
-
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-4xl font-bold mb-12 text-center">About Me</h1>
@@ -76,27 +10,27 @@ export default function About() {
       <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4 text-center">
-            Tech Skills
+            {skillStack[0]?.title}
           </h2>
           <div className="flex flex-wrap justify-center gap-2">
-            {techSkills.map((skill, index) => (
-              <span key={index} className="tech-badge">
-                {skill}
-              </span>
-            ))}
+            {skillStack[0].tags.map((tag) => (
+                <span key={tag} className="tech-badge">
+                  {tag}
+                </span>
+              ))}
           </div>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-4 text-center">
-            Social Skills
+            {skillStack[1]?.title}
           </h2>
           <div className="flex flex-wrap justify-center gap-2">
-            {socialSkills.map((skill, index) => (
-              <span key={index} className="tech-badge">
-                {skill}
-              </span>
-            ))}
+            {skillStack[1].tags.map((tag) => (
+                <span key={tag} className="tech-badge">
+                  {tag}
+                </span>
+              ))}
           </div>
         </div>
       </div>
@@ -111,7 +45,7 @@ export default function About() {
 
           {/* Timeline Events */}
           {timelineEvents.map((event, index) => (
-            <div key={index} className="relative mb-12 flex">
+            <div key={event.id} className="relative mb-12 flex">
               {/* For desktop: Position boxes on alternating sides */}
               <div
                 className={`w-full md:w-[45%] ${
@@ -140,32 +74,33 @@ export default function About() {
       {/* Hobbies/Side Quests */}
       <div>
         <h2 className="text-2xl font-semibold mb-6 text-center">Side Quests</h2>
-        <div className="space-y-4 mt-8">
-          <p>
-            When I&apos;m not crafting digital worlds, you can find me exploring
-            the real one through traveling to any country that will give me a
-            visa. It is important to go out and touch grass sometimes, but i am
-            a nerd at heart, so i joined a sword fighting club instead. I hope
-            it counts.
-          </p>
-          <p>
-            If i am being honest, I prefer enjoying other fantastical worlds
-            from the comfort of my home. Whether it is the post apocalyptic
-            scenescape of Horizon, the open fields bustling with monsters in the
-            Witcher, or the rooftops of ancient Venice in Assassins Creed. All
-            tickle my fancy. And when they don&apos;t, I am always up for a good
-            book or a movie. I am a sucker for deep lore and engaging
-            cinematography, so you KNOW Star Wars and LotR are always on repeat,
-            plus anything Wes Anderson puts out.
-          </p>
-          <p>
-            Dungeons&Dragons is my favorite TTRPG and it often inspires my game
-            narratives as well. I regularly participate in game jams to
-            challenge my creativity and collaborate with my game dev friends on
-            cool little projects. These rapid development cycles have taught me
-            to think quickly and and to work efficiently under pressure.
-          </p>
-        </div>
+          <div className="space-y-4">
+            <p>
+              When I&apos;m not crafting digital worlds, you can find me
+              exploring the real one through traveling to any country that will
+              give me a visa. It is important to go out and touch grass
+              sometimes, but i am a nerd at heart, so i joined a sword fighting
+              club instead. I hope it counts.
+            </p>
+            <p>
+              If i am being honest, I prefer enjoying other fantastical worlds
+              from the comfort of my home. Whether it is the post apocalyptic
+              scenescape of Horizon, the open fields bustling with monsters in
+              the Witcher, or the rooftops of ancient Venice in Assassins Creed.
+              All tickle my fancy. And when they don&apos;t, I am always up for
+              a good book or a movie. I am a sucker for deep lore and engaging
+              cinematography, so you KNOW Star Wars and LotR are always on
+              repeat, plus anything Wes Anderson puts out.
+            </p>
+            <p>
+              Dungeons&Dragons is my favorite TTRPG and it often inspires my
+              game narratives as well. I regularly participate in game jams to
+              challenge my creativity and collaborate with my game dev friends
+              on cool little projects. These rapid development cycles have
+              taught me to think quickly and and to work efficiently under
+              pressure.
+            </p>
+          </div>
       </div>
     </div>
   );
