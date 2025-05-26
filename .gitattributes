@@ -1,0 +1,11 @@
+# Git LFS attributes for media files in public folder
+
+# Images
+public/**/*.png filter=lfs diff=lfs merge=lfs -text
+public/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+public/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+public/**/*.gif filter=lfs diff=lfs merge=lfs -text
+public/**/*.svg filter=lfs diff=lfs merge=lfs -text
+
+# Videos
+public/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
