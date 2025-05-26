@@ -25,10 +25,13 @@ export default function Projects() {
               >
                 <div className="relative w-full h-48">
                   <Image
-                    src={project.imageUrl}
+                    src={project.cardUrl}
                     alt={project.title}
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{
+                      objectFit: "contain",
+                      objectPosition: "center 50%",
+                    }}
                   />
                 </div>
                 <div className="p-6">
@@ -49,7 +52,7 @@ export default function Projects() {
                     </div>
                   </div>
                   <a
-                    href={project.link}
+                    href={`/projects/${project.id}`}
                     className="hover:underline hover:underline-offset-4"
                   >
                     View Project →
@@ -76,7 +79,7 @@ export default function Projects() {
               >
                 <div className="relative w-full h-48">
                   <Image
-                    src={project.imageUrl}
+                    src={project.cardUrl}
                     alt={project.title}
                     fill
                     style={{ objectFit: "contain" }}
@@ -100,7 +103,7 @@ export default function Projects() {
                     </div>
                   </div>
                   <a
-                    href={project.link}
+                    href={`/projects/${project.id}`}
                     className="hover:underline hover:underline-offset-4"
                   >
                     View Project →
