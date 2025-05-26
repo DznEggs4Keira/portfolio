@@ -13,11 +13,7 @@ export default function ProjectDetail({
 }: {
   params: { slug: string };
 }) {
-  // Unwrap params using React.use()
-  const unwrappedParams = React.use(
-    params as unknown as Promise<{ slug: string }>
-  );
-  const slug = unwrappedParams.slug;
+  const slug = params.slug;
 
   // Find the project with the matching slug
   const project = projects.find(
