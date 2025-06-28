@@ -5,15 +5,15 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import React from "react"; // Make sure to import React
+import React from "react";
 import VideoPlayer from "@/components/VideoPlayer";
 
 export default function ProjectDetail({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = React.use(params);
 
   // Find the project with the matching slug
   const project = projects.find(
@@ -69,8 +69,8 @@ export default function ProjectDetail({
             />
           </div>
         ) : (
+        /* Fallback image for non-video projects */
           <div className="relative w-full h-96 mb-8 rounded-lg overflow-hidden">
-            {/* Fallback image for non-video projects */}
             <Image
               src={project.imageUrl || "/placeholder-project.svg"}
               alt={project.title}
@@ -152,17 +152,33 @@ export default function ProjectDetail({
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Placeholder for gallery images */}
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="relative h-48 rounded-lg overflow-hidden bg-gray-800"
-                >
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    Gallery Image {i}
+              {project.galleryImages.length === 0 ? (
+                [1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    className="relative flex items-center justify-center bg-gray-800 rounded-lg p-2"
+                    style={{ minHeight: 120 }}
+                  >
+                    <div className="text-gray-500">Gallery Image {i}</div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                project.galleryImages.map((img: string, i: number) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center bg-gray-800 rounded-lg p-2"
+                    style={{ overflow: "auto" }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={img || "/placeholder-project.svg"}
+                      alt={project.title}
+                      className="rounded-lg max-w-full h-auto"
+                      style={{ display: "block", maxHeight: 400 }}
+                    />
+                  </div>
+                ))
+              )}
             </div>
           </div>
         ) : (
