@@ -6,7 +6,7 @@ export default function Contact() {
         <h1 className="text-4xl font-bold mb-4 md:mb-0">
           Let&apos;s Work Together
         </h1>
-        <a href="/Zainab CV.pdf" download className="btn btn-primary btn-md">
+        <a href="/Zainab_Ali_CV.pdf" download className="btn btn-primary btn-md">
           Download CV
         </a>
       </div>

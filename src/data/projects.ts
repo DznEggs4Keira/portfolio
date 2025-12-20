@@ -138,7 +138,7 @@ export const projects: Project[] = [
     fullDescription: "Hooded Hooligans was my humorous entry for the Global Game Jam 2024, addressing the theme 'Make Me Laugh'. This 3D platformer comedy game follows a group of mischievous goblins disguised as one big human who must manage to collect enough gold coins to pay for a tankard of beer, and not get caught by the bartender.",
     technologies: ["Unreal Engine", "Blueprints", "3D Platformer"],
     cardUrl: "/hooded-hooligans/hooded-hooligans-card.png",
-    videoUrl: "/hooded-hooligans/hooded-hooligans-video.mp4",
+    videoUrl: "https://www.youtube.com/watch?v=PUp003NmPnI",
     galleryImages: [
       "/hooded-hooligans/HH_1.jpg",
       "/hooded-hooligans/HH_2.jpg",
