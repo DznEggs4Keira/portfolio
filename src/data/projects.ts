@@ -98,8 +98,8 @@ export const projects: Project[] = [
     ],
     challenges: "This was the first game jam that i paticipated in. The main challenge was definitely allocating time and getting everything done in the very limited development window.",
     learnings: "It helped me learn how to scope a project effectively and prioritize features that deliver the most impact in a short time frame.",
-    webglEnabled: true,
-    webglUrl: "/webgl/who-is-grandma/index.html"
+    webglEnabled: false,
+    webglUrl: ""
   },
   {
     id: 2,
@@ -126,8 +126,8 @@ export const projects: Project[] = [
     ],
     challenges: "I was the only developer on this project adept in Unity, so I had to find the right tasks to delegate which could be picked up by others and attempted. It was challenging to guage the difficulty of tasks from that perspective.",
     learnings: "I had a really nice time learning how to create enemy NPCs which followed a simple AI (Finite State Machine)",
-    webglEnabled: true,
-    webglUrl: "/webgl/the-root-of-all-evil/index.html"
+    webglEnabled: false,
+    webglUrl: ""
   },
   {
     id: 3,
@@ -154,8 +154,8 @@ export const projects: Project[] = [
     ],
     challenges: "Our plan was quite ambitious with this game and it was really challening to get everything doen in the limited time.",
     learnings: "You can really stumble upon very unique and creative ways to circumvent your limitations. for example, we didn't have a 3D animator, so we used different face sprites to animate the goblins!",
-    webglEnabled: true,
-    webglUrl: "/webgl/hooded-hooligans/index.html"
+    webglEnabled: false,
+    webglUrl: ""
   },
   {
     id: 4,
@@ -183,7 +183,37 @@ export const projects: Project[] = [
     ],
     challenges: "We wanted to make a 3D experience but we didn't have enough 3D artists wo we had to find techniques to give depth to 2D sprites.",
     learnings: "It is quite uncommon to have a CI/CD pipeline for game jams but we wanted to try it out anyway. it was really awesome when it finally worked and we got to see how useful it is to always have a build version of the game available with the latest push.",
-    webglEnabled: true,
-    webglUrl: "/webgl/lose-it-dreaming/index.html"
+    webglEnabled: false,
+    webglUrl: ""
+  },
+  {
+    id: 7,
+    title: "Mascov",
+    slug: "mascov",
+    category: "Hobby",
+    description: "A dark mystery detective game created for Global Game Jam 2026 (Theme: Masks)",
+    fullDescription: "You are an enigmatic investigator drawn to an island where something dark and mysterious has come to pass. The town's residents have lost their identities and now wander aimlessly, waiting for someone to relieve them of their curse. As you explore, you must decide how to help them find themselves and restore what little peace remains… or risk being consumed by the very force you came to stop.",
+    technologies: ["Unreal Engine", "C++", "Blueprints", "3D", "Perforce", "GitLab CI/CD"],
+    cardUrl: "/mascov/mascov-card.png",
+    videoUrl: "https://youtu.be/puh182Izyfg",
+    galleryImages: [
+      "/mascov/Mascov_1.png",
+      "/mascov/Mascov_2.png",
+      "/mascov/Mascov_3.png",
+      "/mascov/Mascov_4.jpg",
+    ],
+    links: {
+      itch: "https://dzneggs4keira.itch.io/mascov",
+    },
+    features: [
+      "Atmospheric 3D mystery/detective gameplay",
+      "Dark narrative about identity and curses",
+      "Single-player puzzle-solving experience",
+      "Haunting island environment with restless spirits",
+    ],
+    challenges: "Implementing two native C++ classes for core gameplay systems was challenging, as I hadn't worked with Unreal Engine or C++ in quite some time. However, it proved to be an encouraging experience that reinforced my ability to quickly adapt to unfamiliar technical environments under pressure.",
+    learnings: "Built two native C++ classes that served as core gameplay systems, providing the designer with a solid foundation to construct game logic and gameplay loops in Blueprints. Implemented CI/CD pipeline using Perforce triggers and self-hosted GitLab runners for automated builds during the jam—uncommon for game jams but proved invaluable for keeping the team synchronized with always-available latest builds.",
+    webglEnabled: false,
+    webglUrl: ""
   }
 ]; 
