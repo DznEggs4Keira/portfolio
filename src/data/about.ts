@@ -36,6 +36,26 @@ export const skillStack: SkillStack[] = [
   },
 ];
 
+export interface SideQuest {
+  id: number;
+  text: string;
+}
+
+export const sideQuests: SideQuest[] = [
+  {
+    id: 1,
+    text: "When I'm not crafting digital worlds, you can find me exploring the real one through traveling to any country that will give me a visa. It is important to go out and touch grass sometimes, but i am a nerd at heart, so i joined a sword fighting club instead. I hope it counts.",
+  },
+  {
+    id: 2,
+    text: "If i am being honest, I prefer enjoying other fantastical worlds from the comfort of my home. Whether it is the post apocalyptic scenescape of Horizon, the open fields bustling with monsters in the Witcher, or the rooftops of ancient Venice in Assassins Creed. All tickle my fancy. And when they don't, I am always up for a good book or a movie. I am a sucker for deep lore and engaging cinematography, so you KNOW Star Wars and LotR are always on repeat, plus anything Wes Anderson puts out.",
+  },
+  {
+    id: 3,
+    text: "Dungeons & Dragons is my favorite TTRPG and it often inspires my game narratives as well. I regularly participate in game jams to challenge my creativity and collaborate with my game dev friends on cool little projects. These rapid development cycles have taught me to think quickly and to work efficiently under pressure.",
+  },
+];
+
 export interface TimelineEvent {
   id: number;
   year: string;
