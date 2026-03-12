@@ -197,11 +197,11 @@ export default function ProjectDetail({
         ) : (
           <div></div> // Empty div to maintain the flex spacing
         )}
-        {/* Next/Previous Project Navigation with Descending Order Logic */}
+        {/* Next/Previous Project Navigation with Ascending Order Logic */}
         <div className="flex justify-between mt-12">
-          {project.id < projects.length ? (
+          {project.id > 0 ? (
             <Link
-              href={`/projects/${project.id + 1}`}
+              href={`/projects/${project.id - 1}`}
               className="btn btn-primary btn-md"
             >
               ← Previous Project
@@ -209,9 +209,9 @@ export default function ProjectDetail({
           ) : (
             <div></div> // Empty div to maintain the flex spacing
           )}
-          {project.id > 1 ? (
+          {project.id < projects.length - 1 ? (
             <Link
-              href={`/projects/${project.id - 1}`}
+              href={`/projects/${project.id + 1}`}
               className="btn btn-primary btn-md"
             >
               Next Project →

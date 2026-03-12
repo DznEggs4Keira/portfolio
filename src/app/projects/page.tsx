@@ -14,25 +14,26 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects
             .filter((project) => project.category === "Professional")
-            .sort((a, b) => b.id - a.id) // Descending order by id
+            .sort((a, b) => a.id - b.id) // Ascending order by id
             .map((project) => (
               <motion.div
                 key={project.id}
                 className="project-card text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: project.id * 0.1 }} // Staggered delay based on index
+                transition={{ duration: 2.0, delay: project.id * 0.3 }} // Staggered delay based on index
               >
-                <div className="relative w-full h-48">
-                  <Image
-                    src={project.cardUrl}
-                    alt={project.title}
-                    fill
-                    style={{
-                      objectFit: "contain",
-                      objectPosition: "center 50%",
-                    }}
-                  />
+                <div className="relative w-full h-48 p-8">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={project.cardUrl}
+                      alt={project.title}
+                      fill
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -68,22 +69,26 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects
             .filter((project) => project.category === "Hobby")
-            .sort((a, b) => b.id - a.id) // Descending order by id
+            .sort((a, b) => a.id - b.id) // Ascending order by id
             .map((project) => (
               <motion.div
                 key={project.id}
                 className="project-card text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: project.id * 0.1 }} // Staggered delay based on index
+                transition={{ duration: 2.0, delay: project.id * 0.3 }} // Staggered delay based on index
               >
-                <div className="relative w-full h-48">
-                  <Image
-                    src={project.cardUrl}
-                    alt={project.title}
-                    fill
-                    style={{ objectFit: "contain" }}
-                  />
+                <div className="relative w-full h-48 p-8">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={project.cardUrl}
+                      alt={project.title}
+                      fill
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>

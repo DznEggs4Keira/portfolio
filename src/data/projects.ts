@@ -24,32 +24,46 @@ export interface Project {
 
 export const projects: Project[] = [
   // Professional Projects
-  {
-    id: 5,
-    title: "SpaceChef",
-    slug: "spacechef",
+    {
+    id: 0,
+    title: "Qira",
+    slug: "qira",
     category: "Professional",
-    description: "An upcoming game from BlueGoo Games for space cowboy food enthusiasts.",
-    fullDescription: "SpaceChef is an innovative cooking simulation game set in the far reaches of the galaxy. Players must prepare exotic dishes from alien ingredients to satisfy the diverse palates of their customers from across the universe.\n\nThe game features an isometric environment with lush and rich planets to explore, NPCs to speak with. I worked as part of the BlueGoo Games team to develop core gameplay systems, including the Weapons inception and implementation and Level design",
-    technologies: ["Unity", "C#", "2D Isometric", "Shader Graph", "Cinemachine"],
-    cardUrl: "/spacechef/spacechef-card.png",
-    videoUrl: "/spacechef/spacechef-video.mp4",
+    description: "Your AI Repair Assistant. Repairs in record time!",
+    fullDescription: "Qira is an AI-powered repair assistant developed by AHEAD GmbH which provides a web-based platform for workshops to quickly and accurately diagnose and repair vehicles. We leverage the vast databases of OEM repair manuals available under the right to repair legislation to provide step-by-step repair instructions, diagnostic tools, and parts identification. Qira aims to streamline the repair process, reduce downtime, and improve the overall efficiency of workshops by harnessing the power of AI to assist technicians in their daily tasks.",
+    technologies: ["NodeJS", "NestJS", "Typescript", "Angular", "Python"],
+    cardUrl: "/qira/qira-card.avif",
+    videoUrl: "https://youtu.be/oe7XgNASmIc",
     links: {
-      official: "https://www.spacechefgame.com/",
+      official: "https://www.qira.net",
     },
-    features: [
-      "Dynamic cooking system with realistic ingredient interactions",
-      "Over 50 unique alien ingredients with special properties",
-      "Procedurally generated customer requests based on species preferences",
-      "Time management gameplay with increasing complexity"
-    ],
+    features: [],
+    challenges: "",
+    learnings: "",
+    webglEnabled: false,
+    webglUrl: ""
+  },
+    {
+    id: 1,
+    title: "Propoints",
+    slug: "propoints",
+    category: "Professional",
+    description: "The Loyalty Program for Workshops.",
+    fullDescription: "Propoints is a loyalty program designed to serve the interests of workshops in the automotive aftermarket and is a product of AHEAD GmbH.It provides a platform for workshops to earn points based on their purchases and activities, which can then be redeemed for rewards and benefits. The program aims to foster stronger relationships between workshops and suppliers, while also incentivizing increased engagement and loyalty within the industry.",
+    technologies: ["Ruby", "Rails", "PostgresSQL"],
+    cardUrl: "/propoints/propoints-card.svg",
+    imageUrl: "/propoints/propoints-image.png",
+    links: {
+      official: "https://www.propoints.com/de/en",
+    },
+    features: [],
     challenges: "",
     learnings: "",
     webglEnabled: false,
     webglUrl: ""
   },
   {
-    id: 6,
+    id: 2,
     title: "ErgoGames",
     slug: "ergogames",
     category: "Professional",
@@ -72,93 +86,83 @@ export const projects: Project[] = [
     webglEnabled: false,
     webglUrl: ""
   },
-  // Hobby Projects
-  {
-    id: 1,
-    title: "Who is Grandma?",
-    slug: "who-is-grandma",
-    category: "Hobby",
-    description: "Entry for Global Game Jam 2022. The theme was 'Duality'",
-    fullDescription: "Who is Grandma? was my submission for the Global Game Jam 2022, exploring the theme of 'Duality'. This 2D platformer tells the story of a grandchild who discovers their sweet, cookie-baking grandmother has a secret past as a RAVE QUEEN.",
-    technologies: ["Unity Engine", "C#", "2D Platformer"],
-    cardUrl: "/who-is-grandma/who-is-grandma-card.png",
-    videoUrl: "https://www.youtube.com/watch?v=h5oIhIHBypA",
-    galleryImages: [
-      "/who-is-grandma/WiG_1.png",
-      "/who-is-grandma/WiG_2.png",
-      "/who-is-grandma/WiG_3.png",
-    ],
-    links: {
-      itch: "https://dzneggs4keira.itch.io/who-is-grandma",
-      github: "https://github.com/DznEggs4Keira/GGJ-2022",
-    },
-    features: [
-      "Hand-drawn art style",
-      "Narrative-driven level design with hidden collectibles",
-    ],
-    challenges: "This was the first game jam that i paticipated in. The main challenge was definitely allocating time and getting everything done in the very limited development window.",
-    learnings: "It helped me learn how to scope a project effectively and prioritize features that deliver the most impact in a short time frame.",
-    webglEnabled: false,
-    webglUrl: ""
-  },
-  {
-    id: 2,
-    title: "The Root of All Evil",
-    slug: "the-root-of-all-evil",
-    category: "Hobby",
-    description: "Entry for Global Game Jam 2023. The theme was 'Roots'",
-    fullDescription: "The Root of All Evil was my creation for the Global Game Jam 2023, inspired by the theme 'Roots'. This isometric puzzle game casts players as a sentient plant seeking revenge on the mycelium infesting the forest.",
-    technologies: ["Unity Engine", "C#", "2D Isometric"],
-    cardUrl: "/root-of-all-evil/root-of-all-evil-card.png",
-    videoUrl: "https://www.youtube.com/watch?v=RlfU8akPOa0&feature=youtu.be",
-    imageUrl: "/ggj-2023.png",
-    galleryImages: [
-      "/root-of-all-evil/RoaE_1.png",
-      "/root-of-all-evil/RoaE_2.png",
-      "/root-of-all-evil/RoaE_3.png",
-    ],
-    links: {
-      itch: "https://dzneggs4keira.itch.io/the-root-of-all-evil",
-      github: "https://github.com/DznEggs4Keira/GGJ-2023",
-    },
-    features: [
-      "Environmental puzzles requiring the player to find and destroy all the mycelium growth in the level"
-    ],
-    challenges: "I was the only developer on this project adept in Unity, so I had to find the right tasks to delegate which could be picked up by others and attempted. It was challenging to guage the difficulty of tasks from that perspective.",
-    learnings: "I had a really nice time learning how to create enemy NPCs which followed a simple AI (Finite State Machine)",
-    webglEnabled: false,
-    webglUrl: ""
-  },
-  {
+    {
     id: 3,
-    title: "Hooded Hooligans",
-    slug: "hooded-hooligans",
-    category: "Hobby",
-    description: "Entry for Global Game Jam 2024. The theme was 'Make Me Laugh'",
-    fullDescription: "Hooded Hooligans was my humorous entry for the Global Game Jam 2024, addressing the theme 'Make Me Laugh'. This 3D platformer comedy game follows a group of mischievous goblins disguised as one big human who must manage to collect enough gold coins to pay for a tankard of beer, and not get caught by the bartender.",
-    technologies: ["Unreal Engine", "Blueprints", "3D Platformer"],
-    cardUrl: "/hooded-hooligans/hooded-hooligans-card.png",
-    videoUrl: "https://www.youtube.com/watch?v=PUp003NmPnI",
-    galleryImages: [
-      "/hooded-hooligans/HH_1.jpg",
-      "/hooded-hooligans/HH_2.jpg",
-      "/hooded-hooligans/HH_3.jpg",
-      "/hooded-hooligans/HH_4.jpg",
-    ],
+    title: "SpaceChef",
+    slug: "spacechef",
+    category: "Professional",
+    description: "An upcoming game from BlueGoo Games for space cowboy food enthusiasts.",
+    fullDescription: "SpaceChef is an innovative cooking simulation game set in the far reaches of the galaxy. Players must prepare exotic dishes from alien ingredients to satisfy the diverse palates of their customers from across the universe.\n\nThe game features an isometric environment with lush and rich planets to explore, NPCs to speak with. I worked as part of the BlueGoo Games team to develop core gameplay systems, including the Weapons inception and implementation and Level design",
+    technologies: ["Unity", "C#", "2D Isometric", "Shader Graph", "Cinemachine"],
+    cardUrl: "/spacechef/spacechef-card.png",
+    videoUrl: "/spacechef/spacechef-video.mp4",
     links: {
-      itch: "https://globalgamejam.org/2024/games/hooded-hooligans-2",
-      github: "https://github.com/DznEggs4Keira/GGJ-2024",
+      official: "https://www.spacechefgame.com/",
     },
     features: [
-      "Cooperative multiplayer"
+      "Dynamic cooking system with realistic ingredient interactions",
+      "Over 50 unique alien ingredients with special properties",
+      "Procedurally generated customer requests based on species preferences",
+      "Time management gameplay with increasing complexity"
     ],
-    challenges: "Our plan was quite ambitious with this game and it was really challening to get everything doen in the limited time.",
-    learnings: "You can really stumble upon very unique and creative ways to circumvent your limitations. for example, we didn't have a 3D animator, so we used different face sprites to animate the goblins!",
+    challenges: "",
+    learnings: "",
     webglEnabled: false,
     webglUrl: ""
   },
-  {
+  // Hobby Projects
+      {
     id: 4,
+    title: "Cthulu",
+    slug: "cthulu",
+    category: "Hobby",
+    description: "Love thine Fishies!",
+    fullDescription: "",
+    technologies: ["Unreal Engine", "C++", "Blueprints", "2D", "GitHub CI/CD"],
+    cardUrl: "/placeholder-project.svg",
+    imageUrl: "",
+    galleryImages: [],
+    links: {
+      github: "https://github.com/DznEggs4Keira/Cthulu",
+    },
+    features: [],
+    challenges: "",
+    learnings: "",
+    webglEnabled: false,
+    webglUrl: ""
+  },
+    {
+    id: 5,
+    title: "Mascov",
+    slug: "mascov",
+    category: "Hobby",
+    description: "A dark mystery detective game created for Global Game Jam 2026 (Theme: Masks)",
+    fullDescription: "You are an enigmatic investigator drawn to an island where something dark and mysterious has come to pass. The town's residents have lost their identities and now wander aimlessly, waiting for someone to relieve them of their curse. As you explore, you must decide how to help them find themselves and restore what little peace remains… or risk being consumed by the very force you came to stop.",
+    technologies: ["Unreal Engine", "C++", "Blueprints", "3D", "Perforce", "GitLab CI/CD"],
+    cardUrl: "/mascov/mascov-card.png",
+    videoUrl: "https://youtu.be/puh182Izyfg",
+    galleryImages: [
+      "/mascov/Mascov_1.png",
+      "/mascov/Mascov_2.png",
+      "/mascov/Mascov_3.png",
+      "/mascov/Mascov_4.jpg",
+    ],
+    links: {
+      itch: "https://dzneggs4keira.itch.io/mascov",
+    },
+    features: [
+      "Atmospheric 3D mystery/detective gameplay",
+      "Dark narrative about identity and curses",
+      "Single-player puzzle-solving experience",
+      "Haunting island environment with restless spirits",
+    ],
+    challenges: "Implementing two native C++ classes for core gameplay systems was challenging, as I hadn't worked with Unreal Engine or C++ in quite some time. However, it proved to be an encouraging experience that reinforced my ability to quickly adapt to unfamiliar technical environments under pressure.",
+    learnings: "Built two native C++ classes that served as core gameplay systems, providing the designer with a solid foundation to construct game logic and gameplay loops in Blueprints. Implemented CI/CD pipeline using Perforce triggers and self-hosted GitLab runners for automated builds during the jam—uncommon for game jams but proved invaluable for keeping the team synchronized with always-available latest builds.",
+    webglEnabled: false,
+    webglUrl: ""
+  },
+    {
+    id: 6,
     title: "Lose-it Dreaming",
     slug: "lose-it-dreaming",
     category: "Hobby",
@@ -186,33 +190,87 @@ export const projects: Project[] = [
     webglEnabled: false,
     webglUrl: ""
   },
-  {
+    {
     id: 7,
-    title: "Mascov",
-    slug: "mascov",
+    title: "Hooded Hooligans",
+    slug: "hooded-hooligans",
     category: "Hobby",
-    description: "A dark mystery detective game created for Global Game Jam 2026 (Theme: Masks)",
-    fullDescription: "You are an enigmatic investigator drawn to an island where something dark and mysterious has come to pass. The town's residents have lost their identities and now wander aimlessly, waiting for someone to relieve them of their curse. As you explore, you must decide how to help them find themselves and restore what little peace remains… or risk being consumed by the very force you came to stop.",
-    technologies: ["Unreal Engine", "C++", "Blueprints", "3D", "Perforce", "GitLab CI/CD"],
-    cardUrl: "/mascov/mascov-card.png",
-    videoUrl: "https://youtu.be/puh182Izyfg",
+    description: "Entry for Global Game Jam 2024. The theme was 'Make Me Laugh'",
+    fullDescription: "Hooded Hooligans was my humorous entry for the Global Game Jam 2024, addressing the theme 'Make Me Laugh'. This 3D platformer comedy game follows a group of mischievous goblins disguised as one big human who must manage to collect enough gold coins to pay for a tankard of beer, and not get caught by the bartender.",
+    technologies: ["Unreal Engine", "Blueprints", "3D Platformer"],
+    cardUrl: "/hooded-hooligans/hooded-hooligans-card.png",
+    videoUrl: "https://www.youtube.com/watch?v=PUp003NmPnI",
     galleryImages: [
-      "/mascov/Mascov_1.png",
-      "/mascov/Mascov_2.png",
-      "/mascov/Mascov_3.png",
-      "/mascov/Mascov_4.jpg",
+      "/hooded-hooligans/HH_1.jpg",
+      "/hooded-hooligans/HH_2.jpg",
+      "/hooded-hooligans/HH_3.jpg",
+      "/hooded-hooligans/HH_4.jpg",
     ],
     links: {
-      itch: "https://dzneggs4keira.itch.io/mascov",
+      itch: "https://globalgamejam.org/2024/games/hooded-hooligans-2",
+      github: "https://github.com/DznEggs4Keira/GGJ-2024",
     },
     features: [
-      "Atmospheric 3D mystery/detective gameplay",
-      "Dark narrative about identity and curses",
-      "Single-player puzzle-solving experience",
-      "Haunting island environment with restless spirits",
+      "Cooperative multiplayer"
     ],
-    challenges: "Implementing two native C++ classes for core gameplay systems was challenging, as I hadn't worked with Unreal Engine or C++ in quite some time. However, it proved to be an encouraging experience that reinforced my ability to quickly adapt to unfamiliar technical environments under pressure.",
-    learnings: "Built two native C++ classes that served as core gameplay systems, providing the designer with a solid foundation to construct game logic and gameplay loops in Blueprints. Implemented CI/CD pipeline using Perforce triggers and self-hosted GitLab runners for automated builds during the jam—uncommon for game jams but proved invaluable for keeping the team synchronized with always-available latest builds.",
+    challenges: "Our plan was quite ambitious with this game and it was really challening to get everything doen in the limited time.",
+    learnings: "You can really stumble upon very unique and creative ways to circumvent your limitations. for example, we didn't have a 3D animator, so we used different face sprites to animate the goblins!",
+    webglEnabled: false,
+    webglUrl: ""
+  },
+    {
+    id: 8,
+    title: "The Root of All Evil",
+    slug: "the-root-of-all-evil",
+    category: "Hobby",
+    description: "Entry for Global Game Jam 2023. The theme was 'Roots'",
+    fullDescription: "The Root of All Evil was my creation for the Global Game Jam 2023, inspired by the theme 'Roots'. This isometric puzzle game casts players as a sentient plant seeking revenge on the mycelium infesting the forest.",
+    technologies: ["Unity Engine", "C#", "2D Isometric"],
+    cardUrl: "/root-of-all-evil/root-of-all-evil-card.png",
+    videoUrl: "https://www.youtube.com/watch?v=RlfU8akPOa0&feature=youtu.be",
+    imageUrl: "/ggj-2023.png",
+    galleryImages: [
+      "/root-of-all-evil/RoaE_1.png",
+      "/root-of-all-evil/RoaE_2.png",
+      "/root-of-all-evil/RoaE_3.png",
+    ],
+    links: {
+      itch: "https://dzneggs4keira.itch.io/the-root-of-all-evil",
+      github: "https://github.com/DznEggs4Keira/GGJ-2023",
+    },
+    features: [
+      "Environmental puzzles requiring the player to find and destroy all the mycelium growth in the level"
+    ],
+    challenges: "I was the only developer on this project adept in Unity, so I had to find the right tasks to delegate which could be picked up by others and attempted. It was challenging to guage the difficulty of tasks from that perspective.",
+    learnings: "I had a really nice time learning how to create enemy NPCs which followed a simple AI (Finite State Machine)",
+    webglEnabled: false,
+    webglUrl: ""
+  },
+  {
+    id: 9,
+    title: "Who is Grandma?",
+    slug: "who-is-grandma",
+    category: "Hobby",
+    description: "Entry for Global Game Jam 2022. The theme was 'Duality'",
+    fullDescription: "Who is Grandma? was my submission for the Global Game Jam 2022, exploring the theme of 'Duality'. This 2D platformer tells the story of a grandchild who discovers their sweet, cookie-baking grandmother has a secret past as a RAVE QUEEN.",
+    technologies: ["Unity Engine", "C#", "2D Platformer"],
+    cardUrl: "/who-is-grandma/who-is-grandma-card.png",
+    videoUrl: "https://www.youtube.com/watch?v=h5oIhIHBypA",
+    galleryImages: [
+      "/who-is-grandma/WiG_1.png",
+      "/who-is-grandma/WiG_2.png",
+      "/who-is-grandma/WiG_3.png",
+    ],
+    links: {
+      itch: "https://dzneggs4keira.itch.io/who-is-grandma",
+      github: "https://github.com/DznEggs4Keira/GGJ-2022",
+    },
+    features: [
+      "Hand-drawn art style",
+      "Narrative-driven level design with hidden collectibles",
+    ],
+    challenges: "This was the first game jam that i paticipated in. The main challenge was definitely allocating time and getting everything done in the very limited development window.",
+    learnings: "It helped me learn how to scope a project effectively and prioritize features that deliver the most impact in a short time frame.",
     webglEnabled: false,
     webglUrl: ""
   }

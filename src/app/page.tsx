@@ -18,11 +18,11 @@ export default function Home() {
             </p>
             
             <p>
-              In my spare time, I am passionate about game development and have been working on various projects to enhance my skills. I enjoy creating immersive experiences and exploring new technologies in the gaming industry. I recently participated in the Global Game Jam 2025 which you can checkout here.
+              In my spare time, I am passionate about game development and have been working on various projects to enhance my skills. I enjoy creating immersive experiences and exploring new technologies in the gaming industry. I recently participated in the Global Game Jam 2026 which you can checkout <Link href="/projects/5" className="text-blue-600 hover:underline">here</Link>.
             </p>
             
             <p>
-              Furthermore, I am always looking for any opportunity to work alongside teams at game studios. Please don&apos;t hesitate to reach out for any possible collaborations, freelance, remote or on-site. <Link href="/contact" className="text-blue-600 hover:underline">Let&apos;s connect</Link> and get to know each other.
+              Furthermore, I am always looking for any opportunity to work alongside teams at game studios. You can checkout <Link href="/resume" className="text-blue-600 hover:underline">My Resume</Link> and let&apos;s find the right opportunity for both of us.
             </p>
           </div>
         </div>

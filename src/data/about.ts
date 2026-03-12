@@ -36,6 +36,12 @@ export const skillStack: SkillStack[] = [
   },
 ];
 
+export const sideQuests: string[] = [
+  "Contributing to open-source game development projects",
+  "Mentoring aspiring game developers",
+  "Writing technical articles and tutorials",
+];
+
 export interface TimelineEvent {
   id: number;
   year: string;

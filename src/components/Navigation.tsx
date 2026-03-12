@@ -42,10 +42,10 @@ export default function Navigation() {
               Projects
             </Link>
             <Link
-              href="/contact"
-              className={`btn btn-md ${isActive("/contact") ? "btn-active" : "btn-primary"}`}
+              href="/resume"
+              className={`btn btn-md ${isActive("/resume") ? "btn-active" : "btn-primary"}`}
             >
-              Contact
+              Resume
             </Link>
           </div>
 
