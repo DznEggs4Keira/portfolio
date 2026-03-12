@@ -21,7 +21,7 @@ export default function Projects() {
                 className="project-card text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2.0, delay: project.id * 0.3 }} // Staggered delay based on index
+                transition={{ duration: 1.0, delay: project.id * 0.3 }} // Staggered delay based on index
               >
                 <div className="relative w-full h-48 p-8">
                   <div className="relative w-full h-full">
@@ -76,7 +76,7 @@ export default function Projects() {
                 className="project-card text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2.0, delay: project.id * 0.3 }} // Staggered delay based on index
+                transition={{ duration: 1.0, delay: project.id * 0.3 }} // Staggered delay based on index
               >
                 <div className="relative w-full h-48 p-8">
                   <div className="relative w-full h-full">
