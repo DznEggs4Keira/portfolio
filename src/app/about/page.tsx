@@ -1,6 +1,6 @@
 "use client";
 
-import { skillStack } from "@/data/about";
+import { sideQuests, skillStack } from "@/data/about";
 import { timelineEvents, TimelineEvent } from "@/data/about"; // Import the TimelineEvent type
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -14,10 +14,10 @@ interface TimelineItemProps {
 function TimelineItem({ event, index }: TimelineItemProps) {
   const itemRef = useRef<HTMLDivElement>(null);
   const isItemInView = useInView(itemRef, { once: true, amount: 0.3 });
-  
+
   // Determine if this item should be on the left or right side
   const isLeft = index % 2 === 0;
-  
+
   return (
     <div className="relative mb-12" ref={itemRef}>
       {/* The dot */}
@@ -29,12 +29,16 @@ function TimelineItem({ event, index }: TimelineItemProps) {
           transition={{ duration: 0.3, delay: 0.2 }}
         />
       </div>
-      
+
       {/* The content */}
       <motion.div
-        className={`w-[calc(50%-20px)] ${isLeft ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}
+        className={`w-[calc(50%-20px)] ${isLeft ? "mr-auto pr-8" : "ml-auto pl-8"}`}
         initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-        animate={isItemInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 }}
+        animate={
+          isItemInView
+            ? { opacity: 1, x: 0 }
+            : { opacity: 0, x: isLeft ? -50 : 50 }
+        }
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="project-card p-6">
@@ -48,8 +52,6 @@ function TimelineItem({ event, index }: TimelineItemProps) {
     </div>
   );
 }
-
-
 
 export default function About() {
   return (
@@ -105,31 +107,11 @@ export default function About() {
         <h2 className="text-2xl font-semibold mb-6 text-center">Side Quests</h2>
         <div className="project-card p-6">
           <div className="space-y-4">
-            <p className="text-gray-200">
-              When I&apos;m not crafting digital worlds, you can find me
-              exploring the real one through traveling to any country that will
-              give me a visa. It is important to go out and touch grass
-              sometimes, but i am a nerd at heart, so i joined a sword fighting
-              club instead. I hope it counts.
-            </p>
-            <p className="text-gray-200">
-              If i am being honest, I prefer enjoying other fantastical worlds
-              from the comfort of my home. Whether it is the post apocalyptic
-              scenescape of Horizon, the open fields bustling with monsters in
-              the Witcher, or the rooftops of ancient Venice in Assassins Creed.
-              All tickle my fancy. And when they don&apos;t, I am always up for
-              a good book or a movie. I am a sucker for deep lore and engaging
-              cinematography, so you KNOW Star Wars and LotR are always on
-              repeat, plus anything Wes Anderson puts out.
-            </p>
-            <p className="text-gray-200">
-              Dungeons&Dragons is my favorite TTRPG and it often inspires my
-              game narratives as well. I regularly participate in game jams to
-              challenge my creativity and collaborate with my game dev friends
-              on cool little projects. These rapid development cycles have
-              taught me to think quickly and and to work efficiently under
-              pressure.
-            </p>
+            {sideQuests.map((quest) => (
+              <p key={quest.id} className="text-gray-200">
+                {quest.text}
+              </p>
+            ))}
           </div>
         </div>
       </div>

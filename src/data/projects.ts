@@ -20,6 +20,7 @@ export interface Project {
   learnings?: string;
   webglEnabled?: boolean;
   webglUrl?: string;
+  isSpotlight?: boolean;
 }
 
 export const projects: Project[] = [
@@ -41,7 +42,8 @@ export const projects: Project[] = [
     challenges: "",
     learnings: "",
     webglEnabled: false,
-    webglUrl: ""
+    webglUrl: "",
+    isSpotlight: true,
   },
     {
     id: 1,
@@ -60,7 +62,7 @@ export const projects: Project[] = [
     challenges: "",
     learnings: "",
     webglEnabled: false,
-    webglUrl: ""
+    webglUrl: "",
   },
   {
     id: 2,
@@ -129,7 +131,8 @@ export const projects: Project[] = [
     challenges: "",
     learnings: "",
     webglEnabled: false,
-    webglUrl: ""
+    webglUrl: "",
+    isSpotlight: true,
   },
     {
     id: 5,
@@ -159,7 +162,8 @@ export const projects: Project[] = [
     challenges: "Implementing two native C++ classes for core gameplay systems was challenging, as I hadn't worked with Unreal Engine or C++ in quite some time. However, it proved to be an encouraging experience that reinforced my ability to quickly adapt to unfamiliar technical environments under pressure.",
     learnings: "Built two native C++ classes that served as core gameplay systems, providing the designer with a solid foundation to construct game logic and gameplay loops in Blueprints. Implemented CI/CD pipeline using Perforce triggers and self-hosted GitLab runners for automated builds during the jam—uncommon for game jams but proved invaluable for keeping the team synchronized with always-available latest builds.",
     webglEnabled: false,
-    webglUrl: ""
+    webglUrl: "",
+    isSpotlight: true,
   },
     {
     id: 6,
