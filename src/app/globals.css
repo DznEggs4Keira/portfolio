@@ -15,6 +15,7 @@
   --gd-soft: #bb5a2e1a;
   --accent: var(--gd);
   --accent-soft: var(--gd-soft);
+  --on-accent: #ffffff;
 }
 
 [data-mode="backend"] {
@@ -23,6 +24,14 @@
 }
 
 [data-mode="gamedev"] {
+  --paper: #1a1a1a;
+  --paper-raised: #242220;
+  --ink: #f5f1ea;
+  --ink-soft: #c9c2b8;
+  --ink-faint: #9a948a;
+  --rule: #3a3632;
+  --gd: #d17a4f;
+  --gd-soft: #d17a4f1a;
   --accent: var(--gd);
   --accent-soft: var(--gd-soft);
 }
@@ -45,7 +54,7 @@
   }
 
   .btn-active {
-    @apply bg-accent text-paper-raised border-accent;
+    @apply bg-accent text-on-accent border-accent;
   }
 
   .project-card {
@@ -78,4 +87,5 @@
 body {
   background: var(--paper);
   color: var(--ink);
+  transition: background-color 300ms ease, color 300ms ease;
 }

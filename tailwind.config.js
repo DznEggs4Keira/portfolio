@@ -17,6 +17,7 @@ module.exports = {
           rule: 'var(--rule)',
           accent: 'var(--accent)',
           'accent-soft': 'var(--accent-soft)',
+          'on-accent': 'var(--on-accent)',
         },
         fontFamily: {
           mono: ['var(--font-jetbrains-mono)', 'monospace'],

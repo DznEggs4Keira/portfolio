@@ -82,26 +82,22 @@ function SideQuests() {
   return (
     <div ref={ref}>
       <h2 className="text-3xl font-serif font-semibold mb-6 text-center text-ink">Side Quests</h2>
-      <motion.div
-        className="project-card p-6"
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className="space-y-4">
-          {sideQuests.map((quest, index) => (
-            <motion.p
-              key={quest.id}
-              className="text-ink-soft"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.15, ease: "easeOut" }}
-            >
-              {quest.text}
-            </motion.p>
-          ))}
-        </div>
-      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {sideQuests.map((quest, index) => (
+          <motion.div
+            key={quest.id}
+            className="project-card p-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.1 + index * 0.15, ease: "easeOut" }}
+          >
+            <h3 className="font-mono text-xs uppercase tracking-wide text-accent mb-3">
+              {quest.title}
+            </h3>
+            <p className="text-ink-soft">{quest.text}</p>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

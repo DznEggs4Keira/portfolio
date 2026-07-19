@@ -18,7 +18,7 @@ export default function ModeToggle() {
         onClick={() => setMode("backend")}
         aria-pressed={mode === "backend"}
         className={`relative z-10 min-w-[88px] px-4 py-1.5 rounded-full font-mono text-xs font-semibold uppercase tracking-wide transition-colors ${
-          mode === "backend" ? "text-paper-raised" : "text-ink-soft"
+          mode === "backend" ? "text-on-accent" : "text-ink-soft"
         }`}
       >
         Backend
@@ -28,7 +28,7 @@ export default function ModeToggle() {
         onClick={() => setMode("gamedev")}
         aria-pressed={mode === "gamedev"}
         className={`relative z-10 min-w-[88px] px-4 py-1.5 rounded-full font-mono text-xs font-semibold uppercase tracking-wide transition-colors ${
-          mode === "gamedev" ? "text-paper-raised" : "text-ink-soft"
+          mode === "gamedev" ? "text-on-accent" : "text-ink-soft"
         }`}
       >
         Game Dev
