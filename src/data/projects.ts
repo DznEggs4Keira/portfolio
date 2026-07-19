@@ -21,6 +21,7 @@ export interface Project {
   learnings?: string;
   contribution?: string[];
   isSpotlight?: boolean;
+  cardBg?: "dark";
 }
 
 export const projects: Project[] = [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     fullDescription: "Qira is an AI-powered repair assistant developed by AHEAD GmbH which provides a web-based platform for workshops to quickly and accurately diagnose and repair vehicles. We leverage the vast databases of OEM repair manuals available under the right to repair legislation to provide step-by-step repair instructions, diagnostic tools, and parts identification. Qira aims to streamline the repair process, reduce downtime, and improve the overall efficiency of workshops by harnessing the power of AI to assist technicians in their daily tasks.",
     technologies: ["NodeJS", "NestJS", "Typescript", "Angular", "Python"],
     cardUrl: "/qira/qira-card.avif",
+    cardBg: "dark",
     videoUrl: "https://youtu.be/oe7XgNASmIc",
     links: {
       official: "https://www.qira.net",
@@ -84,6 +86,7 @@ export const projects: Project[] = [
     fullDescription: "ErgoGames is a collection of health-focused endless runner games designed to make physical therapy and fitness more engaging. Developed for Ergofox GmbH, these games use motion tracking to turn therapeutic exercises into gameplay mechanics.\n\nThe suite includes several themed runners, each targeting different muscle groups and movement patterns. As players perform their prescribed exercises, their movements control the game character, making therapy sessions more enjoyable and increasing adherence to treatment plans.",
     technologies: ["Node", "JavaScript", "ThreeJS", "React", "Motion Tracking API"],
     cardUrl: "/ergo-games/ergogames-card.svg",
+    cardBg: "dark",
     imageUrl: "/ergo-games/ergogames-image.gif",
     links: {
       official: "https://ergofox.me/de/Ergogames.html",

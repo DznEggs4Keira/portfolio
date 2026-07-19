@@ -38,21 +38,25 @@ export const skillStack: SkillStack[] = [
 
 export interface SideQuest {
   id: number;
+  title: string;
   text: string;
 }
 
 export const sideQuests: SideQuest[] = [
   {
     id: 1,
-    text: "When I'm not crafting digital worlds, you can find me exploring the real one through traveling to any country that will give me a visa. It is important to go out and touch grass sometimes, but i am a nerd at heart, so i joined a sword fighting club instead. I hope it counts.",
+    title: "Touching Grass (On a Bike, or a Boat)",
+    text: "When I'm not building digital worlds, I'm outside exploring the real one: traveling everywhere I can talk my way into a visa for, sailing, and cycling. I did also join a sword-fighting club, if that still counts.",
   },
   {
     id: 2,
-    text: "If i am being honest, I prefer enjoying other fantastical worlds from the comfort of my home. Whether it is the post apocalyptic scenescape of Horizon, the open fields bustling with monsters in the Witcher, or the rooftops of ancient Venice in Assassins Creed. All tickle my fancy. And when they don't, I am always up for a good book or a movie. I am a sucker for deep lore and engaging cinematography, so you KNOW Star Wars and LotR are always on repeat, plus anything Wes Anderson puts out.",
+    title: "Fantasy Worlds, Preferably From the Couch",
+    text: "Horizon's post-apocalyptic sprawl, the Witcher's monster-filled backroads, Assassin's Creed's ancient rooftops, and the grim darkness of Warhammer 40K all tickle my fancy — alongside a good book, deep lore, and anything Wes Anderson puts out.",
   },
   {
     id: 3,
-    text: "Dungeons & Dragons is my favorite TTRPG and it often inspires my game narratives as well. I regularly participate in game jams to challenge my creativity and collaborate with my game dev friends on cool little projects. These rapid development cycles have taught me to think quickly and to work efficiently under pressure.",
+    title: "Game Jams & D&D",
+    text: "Dungeons & Dragons regularly inspires my game narratives, and I jump into game jams to stay creative and collaborate with game dev friends under tight deadlines.",
   },
 ];
 
@@ -65,11 +69,18 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    id: 0,
+    year: "Jan 2026 - Present",
+    title: "Software Developer at AHEAD Automotive GmbH",
+    description:
+      "Promoted to Software Developer. Continuing to build out Qira, an AI repair assistant for mechanics, with growing ownership over architecture and delivery.",
+  },
+  {
     id: 1,
-    year: "2024 - Present",
+    year: "2024 - 2025",
     title: "Junior Software Developer at AHEAD Automotive GmbH",
     description:
-      "Working on Qira, a AI Repair assistant for mechanics. Developing features and improving user experience. Also provide technical support for company software (Google Workspace, CRM, etc.).",
+      "Worked on Qira, a AI Repair assistant for mechanics. Developing features and improving user experience. Also provided technical support for company software (Google Workspace, CRM, etc.).",
   },
   {
     id: 2,

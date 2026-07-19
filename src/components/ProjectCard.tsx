@@ -13,7 +13,11 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, animated = false, index = 0 }: ProjectCardProps) {
   const content = (
     <>
-      <div className="relative w-full h-48 p-8">
+      <div
+        className={`relative w-full h-48 p-8 ${
+          project.cardBg === "dark" ? "bg-[#1a1a1a]" : ""
+        }`}
+      >
         <div className="relative w-full h-full">
           <Image
             src={project.cardUrl}

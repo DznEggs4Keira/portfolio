@@ -1,6 +1,11 @@
+import { getResumeData } from "@/lib/fetchResumeData";
+import ResumeView from "@/components/ResumeView";
+
 const RESUME_URL = "https://cv.gameweaver.dev";
 
-export default function Resume() {
+export default async function Resume() {
+  const data = await getResumeData();
+
   return (
     <div className="max-w-4xl mx-auto p-6">
       {/* Header Section with Title */}
@@ -16,14 +21,17 @@ export default function Resume() {
         </a>
       </div>
 
-      {/* Embedded CV Section */}
-      <div className="project-card p-8 rounded-lg">
-        <iframe
-          src={RESUME_URL}
-          className="w-full"
-          style={{ height: '85vh' }} // Adjust this value as needed
-        ></iframe>
-      </div>
+      {data ? (
+        <ResumeView data={data} />
+      ) : (
+        <div className="project-card p-8 rounded-lg">
+          <iframe
+            src={RESUME_URL}
+            className="w-full"
+            style={{ height: "85vh" }}
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 }

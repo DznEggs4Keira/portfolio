@@ -15,6 +15,18 @@ export function ModeProvider({ children }: { children: ReactNode }) {
   const [mode, setModeState] = useState<Mode>("gamedev");
 
   useEffect(() => {
+    const fromQuery = new URLSearchParams(window.location.search).get("mode");
+    if (fromQuery === "gamedev" || fromQuery === "backend") {
+      setModeState(fromQuery);
+      document.documentElement.setAttribute("data-mode", fromQuery);
+      try {
+        localStorage.setItem("mode", fromQuery);
+      } catch {
+        // localStorage unavailable (private browsing, etc.) - mode just won't persist
+      }
+      return;
+    }
+
     const stored = localStorage.getItem("mode");
     if (stored === "gamedev" || stored === "backend") {
       setModeState(stored);

@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedLayout from "@/components/AnimatedLayout";
 import { ModeProvider } from "@/components/ModeContext";
+import InkBackground from "@/components/InkBackground";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
 const SET_MODE_SCRIPT = `
 (function () {
   try {
-    var mode = localStorage.getItem("mode");
+    var fromQuery = new URLSearchParams(window.location.search).get("mode");
+    var mode = (fromQuery === "gamedev" || fromQuery === "backend") ? fromQuery : localStorage.getItem("mode");
     if (mode !== "gamedev" && mode !== "backend") mode = "gamedev";
     document.documentElement.setAttribute("data-mode", mode);
   } catch (e) {
@@ -40,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-mode="gamedev">
+    <html lang="en" data-mode="gamedev" suppressHydrationWarning>
       <head>
         <Script id="set-mode" strategy="beforeInteractive">
           {SET_MODE_SCRIPT}
@@ -50,6 +52,7 @@ export default function RootLayout({
         className={`${jetbrainsMono.variable} ${sourceSerif.variable} antialiased font-serif`}
       >
         <ModeProvider>
+          <InkBackground />
           <Navigation />
           <main className="pt-24">
             <AnimatedLayout>
