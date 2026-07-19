@@ -1,123 +1,44 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import ProjectCard from "@/components/ProjectCard";
+import { useMode } from "@/components/ModeContext";
 
 export default function Projects() {
+  const { mode } = useMode();
+
+  const gamedevProjects = projects
+    .filter((project) => project.focus === "gamedev")
+    .sort((a, b) => a.id - b.id);
+  const backendProjects = projects
+    .filter((project) => project.focus === "backend")
+    .sort((a, b) => a.id - b.id);
+
+  const sections =
+    mode === "gamedev"
+      ? [
+          { title: "Game Dev Projects", items: gamedevProjects },
+          { title: "Backend Projects", items: backendProjects },
+        ]
+      : [
+          { title: "Backend Projects", items: backendProjects },
+          { title: "Game Dev Projects", items: gamedevProjects },
+        ];
+
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-8">My Projects</h1>
+      <h1 className="text-4xl font-serif font-bold mb-8 text-ink">My Projects</h1>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-6">Professional Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects
-            .filter((project) => project.category === "Professional")
-            .sort((a, b) => a.id - b.id) // Ascending order by id
-            .map((project) => (
-              <motion.div
-                key={project.id}
-                className="project-card text-white"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.0, delay: project.id * 0.3 }} // Staggered delay based on index
-              >
-                <div className="relative w-full h-48 p-8">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={project.cardUrl}
-                      alt={project.title}
-                      fill
-                      style={{
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-2">
-                      Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="tech-badge">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <a
-                    href={`/projects/${project.id}`}
-                    className="hover:underline hover:underline-offset-4"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              </motion.div>
+      {sections.map((section) => (
+        <div key={section.title} className="mb-8">
+          <h2 className="text-2xl font-serif font-semibold mb-6 text-ink">{section.title}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {section.items.map((project, index) => (
+              <ProjectCard key={project.id} project={project} animated index={index} />
             ))}
+          </div>
         </div>
-      </div>
-
-      <div>
-        <h2 className="text-2xl font-semibold mb-6">Hobby Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects
-            .filter((project) => project.category === "Hobby")
-            .sort((a, b) => a.id - b.id) // Ascending order by id
-            .map((project) => (
-              <motion.div
-                key={project.id}
-                className="project-card text-white"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.0, delay: project.id * 0.3 }} // Staggered delay based on index
-              >
-                <div className="relative w-full h-48 p-8">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={project.cardUrl}
-                      alt={project.title}
-                      fill
-                      style={{
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-2">
-                      Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="tech-badge">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <a
-                    href={`/projects/${project.id}`}
-                    className="hover:underline hover:underline-offset-4"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

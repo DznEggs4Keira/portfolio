@@ -2,34 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #faf8f4;
+  --paper-raised: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4642;
+  --ink-faint: #8a847c;
+  --rule: #e3ddd2;
+  --be: #3d5a80;
+  --be-soft: #3d5a801a;
+  --gd: #bb5a2e;
+  --gd-soft: #bb5a2e1a;
+  --accent: var(--gd);
+  --accent-soft: var(--gd-soft);
+}
+
+[data-mode="backend"] {
+  --accent: var(--be);
+  --accent-soft: var(--be-soft);
+}
+
+[data-mode="gamedev"] {
+  --accent: var(--gd);
+  --accent-soft: var(--gd-soft);
+}
+
 @layer components {
   .btn {
-    @apply rounded-full border border-solid border-transparent flex items-center justify-center transition-colors;
+    @apply rounded-full border border-solid border-transparent flex items-center justify-center transition-colors font-mono text-xs tracking-wide uppercase;
   }
 
   .btn-sm {
-    @apply text-sm h-10 px-4;
+    @apply text-xs h-10 px-4;
   }
 
   .btn-md {
-    @apply text-base h-12 px-5;
+    @apply text-xs h-12 px-5;
   }
 
   .btn-primary {
-    @apply bg-background text-foreground border-white hover:border-transparent hover:bg-gray-800 hover:text-black dark:hover:bg-gray-200 dark:hover:text-black;
+    @apply bg-paper-raised text-ink border-rule hover:border-accent hover:text-accent;
   }
 
   .btn-active {
-    @apply bg-foreground text-background;
+    @apply bg-accent text-paper-raised border-accent;
   }
 
   .project-card {
-    @apply border rounded-lg overflow-hidden shadow-lg;
-    background: linear-gradient(to right, #000000 10%, #3730a3 90%);
+    @apply border border-rule rounded-lg overflow-hidden shadow-sm bg-paper-raised text-ink;
   }
 
   .tech-badge {
-    @apply bg-black text-white border border-white px-2 py-1 rounded text-sm;
+    @apply bg-accent-soft text-ink-soft border border-rule px-2 py-1 rounded text-xs font-mono;
   }
 
   /* For the timeline dot hover effect */
@@ -38,7 +62,7 @@
   }
 
   .timeline-dot:hover {
-    @apply bg-blue-300 scale-125;
+    @apply bg-accent scale-125;
   }
 
   /* For the timeline item hover effect */
@@ -51,19 +75,7 @@
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--paper);
+  color: var(--ink);
 }

@@ -20,7 +20,7 @@ function TimelineItem({ event, index }: TimelineItemProps) {
       {/* The dot */}
       <div className="absolute left-1/2 top-5 -ml-2.5 z-10">
         <motion.div
-          className="w-5 h-5 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"
+          className="w-5 h-5 rounded-full bg-accent border-4 border-paper"
           initial={{ scale: 0 }}
           animate={isItemInView ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
@@ -35,11 +35,11 @@ function TimelineItem({ event, index }: TimelineItemProps) {
         transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
       >
         <div className="project-card p-6">
-          <span className="inline-block px-3 py-1 mb-2 rounded bg-blue-600 text-white text-sm font-medium">
+          <span className="inline-block px-3 py-1 mb-2 rounded bg-accent text-paper-raised font-mono text-xs">
             {event.year}
           </span>
-          <h3 className="text-xl font-bold mb-2 text-white">{event.title}</h3>
-          <p className="text-gray-200">{event.description}</p>
+          <h3 className="text-xl font-serif font-bold mb-2 text-ink">{event.title}</h3>
+          <p className="text-ink-soft">{event.description}</p>
         </div>
       </motion.div>
     </div>
@@ -57,7 +57,7 @@ function SkillSection({ title, tags }: SkillSectionProps) {
 
   return (
     <div ref={ref}>
-      <h2 className="text-2xl font-semibold mb-4 text-center">{title}</h2>
+      <h2 className="font-mono text-sm uppercase tracking-wide text-accent mb-4 text-center">{title}</h2>
       <div className="flex flex-wrap justify-center gap-2">
         {tags.map((tag, index) => (
           <motion.span
@@ -81,7 +81,7 @@ function SideQuests() {
 
   return (
     <div ref={ref}>
-      <h2 className="text-2xl font-semibold mb-6 text-center">Side Quests</h2>
+      <h2 className="text-3xl font-serif font-semibold mb-6 text-center text-ink">Side Quests</h2>
       <motion.div
         className="project-card p-6"
         initial={{ opacity: 0, y: 40 }}
@@ -92,7 +92,7 @@ function SideQuests() {
           {sideQuests.map((quest, index) => (
             <motion.p
               key={quest.id}
-              className="text-gray-200"
+              className="text-ink-soft"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.15, ease: "easeOut" }}
@@ -109,7 +109,7 @@ function SideQuests() {
 export default function About() {
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-12 text-center">About Me</h1>
+      <h1 className="text-4xl font-serif font-bold mb-12 text-center text-ink">About Me</h1>
 
       {/* Skills Section */}
       <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -120,9 +120,9 @@ export default function About() {
 
       {/* Journey Timeline */}
       <div className="mb-16">
-        <h2 className="text-3xl font-semibold mb-10 text-center">My Journey</h2>
+        <h2 className="text-3xl font-serif font-semibold mb-10 text-center text-ink">My Journey</h2>
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-500"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-accent"></div>
           {timelineEvents.map((event, index) => (
             <TimelineItem key={event.id} event={event} index={index} />
           ))}

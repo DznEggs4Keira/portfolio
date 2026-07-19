@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   slug?: string;
   category: "Professional" | "Hobby" | "Student";
+  focus: "gamedev" | "backend";
   description: string;
   fullDescription?: string;
   technologies: string[];
@@ -18,8 +19,7 @@ export interface Project {
   features?: string[];
   challenges?: string;
   learnings?: string;
-  webglEnabled?: boolean;
-  webglUrl?: string;
+  contribution?: string[];
   isSpotlight?: boolean;
 }
 
@@ -30,6 +30,7 @@ export const projects: Project[] = [
     title: "Qira",
     slug: "qira",
     category: "Professional",
+    focus: "backend",
     description: "Your AI Repair Assistant. Repairs in record time!",
     fullDescription: "Qira is an AI-powered repair assistant developed by AHEAD GmbH which provides a web-based platform for workshops to quickly and accurately diagnose and repair vehicles. We leverage the vast databases of OEM repair manuals available under the right to repair legislation to provide step-by-step repair instructions, diagnostic tools, and parts identification. Qira aims to streamline the repair process, reduce downtime, and improve the overall efficiency of workshops by harnessing the power of AI to assist technicians in their daily tasks.",
     technologies: ["NodeJS", "NestJS", "Typescript", "Angular", "Python"],
@@ -41,8 +42,18 @@ export const projects: Project[] = [
     features: [],
     challenges: "",
     learnings: "",
-    webglEnabled: false,
-    webglUrl: "",
+    contribution: [
+      "Sole owner of the AI-powered repair assistant chatbot — responsible for architecture, development, and delivery end-to-end",
+      "Developed across a NestJS (TypeScript) backend and Angular frontend on a live production system",
+      "Built API integrations connecting 3 platforms (Ruby on Rails, NestJS, HubSpot), syncing 30,000+ records",
+      "Set up PostgreSQL event tracking in Docker, migrating data from a legacy Ruby application across 3 environments",
+      "Built a Python data scraping pipeline, indexing content into Elasticsearch to power ML document retrieval",
+      "Integrated Azure Blob Storage for image persistence across the AI pipeline",
+      "Engineered LLM prompt architecture — query refinement, document selection, and context injection for accurate AI responses",
+      "Led DevOps modernization: containerized environments in Docker, evaluating Docker Swarm for blue-green deployments and Ansible for infrastructure automation",
+      "Self-taught systems administration managing Google Workspace, MDM tools, and company access systems",
+      "Researched and configured Tableau dashboards for product analytics",
+    ],
     isSpotlight: true,
   },
     {
@@ -50,6 +61,7 @@ export const projects: Project[] = [
     title: "Propoints",
     slug: "propoints",
     category: "Professional",
+    focus: "backend",
     description: "The Loyalty Program for Workshops.",
     fullDescription: "Propoints is a loyalty program designed to serve the interests of workshops in the automotive aftermarket and is a product of AHEAD GmbH.It provides a platform for workshops to earn points based on their purchases and activities, which can then be redeemed for rewards and benefits. The program aims to foster stronger relationships between workshops and suppliers, while also incentivizing increased engagement and loyalty within the industry.",
     technologies: ["Ruby", "Rails", "PostgresSQL"],
@@ -61,14 +73,13 @@ export const projects: Project[] = [
     features: [],
     challenges: "",
     learnings: "",
-    webglEnabled: false,
-    webglUrl: "",
   },
   {
     id: 2,
     title: "ErgoGames",
     slug: "ergogames",
     category: "Professional",
+    focus: "gamedev",
     description: "A series of Endless Runner games focused on health and fitness.",
     fullDescription: "ErgoGames is a collection of health-focused endless runner games designed to make physical therapy and fitness more engaging. Developed for Ergofox GmbH, these games use motion tracking to turn therapeutic exercises into gameplay mechanics.\n\nThe suite includes several themed runners, each targeting different muscle groups and movement patterns. As players perform their prescribed exercises, their movements control the game character, making therapy sessions more enjoyable and increasing adherence to treatment plans.",
     technologies: ["Node", "JavaScript", "ThreeJS", "React", "Motion Tracking API"],
@@ -85,14 +96,18 @@ export const projects: Project[] = [
     ],
     challenges: "The primary challenge was ensuring the motion tracking was both accurate enough for therapeutic value and forgiving enough to be enjoyable. We also had to optimize the ThreeJS rendering to perform well on a variety of devices, including tablets used in clinical settings.",
     learnings: "This project deepened my understanding of 3D web technologies and the integration of physical inputs with digital experiences. I also gained valuable insights into developing games for healthcare applications, including accessibility considerations and clinical efficacy requirements.",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Learned React and Three.js to build browser games integrated with a proprietary webcam body-tracking system",
+      "Designed 5+ levels for an endless runner platformer, implementing UI and core gameplay mechanics",
+      "Prototyped 2 additional game concepts from concept to playable demo",
+    ],
   },
     {
     id: 3,
     title: "SpaceChef",
     slug: "spacechef",
     category: "Professional",
+    focus: "gamedev",
     description: "An upcoming game from BlueGoo Games for space cowboy food enthusiasts.",
     fullDescription: "SpaceChef is an innovative cooking simulation game set in the far reaches of the galaxy. Players must prepare exotic dishes from alien ingredients to satisfy the diverse palates of their customers from across the universe.\n\nThe game features an isometric environment with lush and rich planets to explore, NPCs to speak with. I worked as part of the BlueGoo Games team to develop core gameplay systems, including the Weapons inception and implementation and Level design",
     technologies: ["Unity", "C#", "2D Isometric", "Shader Graph", "Cinemachine"],
@@ -109,8 +124,11 @@ export const projects: Project[] = [
     ],
     challenges: "",
     learnings: "",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Contributed to the existing Unity C# codebase for Space Chef, navigating established systems to add features",
+      "Extended the weapons system with 2 new weapon types matching the existing architecture",
+      "Implemented 3 game levels (space bar, planetary environment, cinematics) and NPC dialogue systems",
+    ],
   },
   // Hobby Projects
       {
@@ -118,6 +136,7 @@ export const projects: Project[] = [
     title: "Cthulu",
     slug: "cthulu",
     category: "Hobby",
+    focus: "gamedev",
     description: "Love thine Fishies!",
     fullDescription: "",
     technologies: ["Unreal Engine", "C++", "Blueprints", "2D", "GitHub CI/CD"],
@@ -130,8 +149,6 @@ export const projects: Project[] = [
     features: [],
     challenges: "",
     learnings: "",
-    webglEnabled: false,
-    webglUrl: "",
     isSpotlight: true,
   },
     {
@@ -139,6 +156,7 @@ export const projects: Project[] = [
     title: "Mascov",
     slug: "mascov",
     category: "Hobby",
+    focus: "gamedev",
     description: "A dark mystery detective game created for Global Game Jam 2026 (Theme: Masks)",
     fullDescription: "You are an enigmatic investigator drawn to an island where something dark and mysterious has come to pass. The town's residents have lost their identities and now wander aimlessly, waiting for someone to relieve them of their curse. As you explore, you must decide how to help them find themselves and restore what little peace remains… or risk being consumed by the very force you came to stop.",
     technologies: ["Unreal Engine", "C++", "Blueprints", "3D", "Perforce", "GitLab CI/CD"],
@@ -161,8 +179,9 @@ export const projects: Project[] = [
     ],
     challenges: "Implementing two native C++ classes for core gameplay systems was challenging, as I hadn't worked with Unreal Engine or C++ in quite some time. However, it proved to be an encouraging experience that reinforced my ability to quickly adapt to unfamiliar technical environments under pressure.",
     learnings: "Built two native C++ classes that served as core gameplay systems, providing the designer with a solid foundation to construct game logic and gameplay loops in Blueprints. Implemented CI/CD pipeline using Perforce triggers and self-hosted GitLab runners for automated builds during the jam—uncommon for game jams but proved invaluable for keeping the team synchronized with always-available latest builds.",
-    webglEnabled: false,
-    webglUrl: "",
+    contribution: [
+      "Implemented core gameplay mechanic base classes in C++, enabling the designer to build game logic in Blueprints — bridging programming and design workflows",
+    ],
     isSpotlight: true,
   },
     {
@@ -170,6 +189,7 @@ export const projects: Project[] = [
     title: "Lose-it Dreaming",
     slug: "lose-it-dreaming",
     category: "Hobby",
+    focus: "gamedev",
     description: "Entry for Global Game Jam 2025. The theme was 'Bubbles'",
     fullDescription: "Lose-it Dreaming was my submission for the Global Game Jam 2025, where the theme was 'Bubbles'. It is a surreal 3D Isometric environment where players play against one another to collect as many dreams (bubbles) and trap the other players.",
     technologies: ["Unreal Engine", "Blueprints", "3D Isometric", "CI/CD with Github Actions"],
@@ -191,14 +211,16 @@ export const projects: Project[] = [
     ],
     challenges: "We wanted to make a 3D experience but we didn't have enough 3D artists wo we had to find techniques to give depth to 2D sprites.",
     learnings: "It is quite uncommon to have a CI/CD pipeline for game jams but we wanted to try it out anyway. it was really awesome when it finally worked and we got to see how useful it is to always have a build version of the game available with the latest push.",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Set up a CI/CD pipeline (GitHub Actions), taught Git workflow to 6 artists, implemented controller input systems",
+    ],
   },
     {
     id: 7,
     title: "Hooded Hooligans",
     slug: "hooded-hooligans",
     category: "Hobby",
+    focus: "gamedev",
     description: "Entry for Global Game Jam 2024. The theme was 'Make Me Laugh'",
     fullDescription: "Hooded Hooligans was my humorous entry for the Global Game Jam 2024, addressing the theme 'Make Me Laugh'. This 3D platformer comedy game follows a group of mischievous goblins disguised as one big human who must manage to collect enough gold coins to pay for a tankard of beer, and not get caught by the bartender.",
     technologies: ["Unreal Engine", "Blueprints", "3D Platformer"],
@@ -219,14 +241,16 @@ export const projects: Project[] = [
     ],
     challenges: "Our plan was quite ambitious with this game and it was really challening to get everything doen in the limited time.",
     learnings: "You can really stumble upon very unique and creative ways to circumvent your limitations. for example, we didn't have a 3D animator, so we used different face sprites to animate the goblins!",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Managed version control for a 9-person team, implemented 3-player couch co-op controller setup",
+    ],
   },
     {
     id: 8,
     title: "The Root of All Evil",
     slug: "the-root-of-all-evil",
     category: "Hobby",
+    focus: "gamedev",
     description: "Entry for Global Game Jam 2023. The theme was 'Roots'",
     fullDescription: "The Root of All Evil was my creation for the Global Game Jam 2023, inspired by the theme 'Roots'. This isometric puzzle game casts players as a sentient plant seeking revenge on the mycelium infesting the forest.",
     technologies: ["Unity Engine", "C#", "2D Isometric"],
@@ -247,14 +271,16 @@ export const projects: Project[] = [
     ],
     challenges: "I was the only developer on this project adept in Unity, so I had to find the right tasks to delegate which could be picked up by others and attempted. It was challenging to guage the difficulty of tasks from that perspective.",
     learnings: "I had a really nice time learning how to create enemy NPCs which followed a simple AI (Finite State Machine)",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Designed core combat mechanics, built the main menu and gameplay loop, integrated 8+ audio tracks and animations",
+    ],
   },
   {
     id: 9,
     title: "Who is Grandma?",
     slug: "who-is-grandma",
     category: "Hobby",
+    focus: "gamedev",
     description: "Entry for Global Game Jam 2022. The theme was 'Duality'",
     fullDescription: "Who is Grandma? was my submission for the Global Game Jam 2022, exploring the theme of 'Duality'. This 2D platformer tells the story of a grandchild who discovers their sweet, cookie-baking grandmother has a secret past as a RAVE QUEEN.",
     technologies: ["Unity Engine", "C#", "2D Platformer"],
@@ -275,7 +301,8 @@ export const projects: Project[] = [
     ],
     challenges: "This was the first game jam that i paticipated in. The main challenge was definitely allocating time and getting everything done in the very limited development window.",
     learnings: "It helped me learn how to scope a project effectively and prioritize features that deliver the most impact in a short time frame.",
-    webglEnabled: false,
-    webglUrl: ""
+    contribution: [
+      "Designed 5+ puzzle riddles, implemented full UI system, managed Git workflow for the team",
+    ],
   }
-]; 
+];
