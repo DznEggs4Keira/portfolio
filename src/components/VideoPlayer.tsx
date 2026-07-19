@@ -122,8 +122,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, title, poster }) => {
   return (
     <div className="relative w-full h-full rounded-lg overflow-hidden">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+        <div className="absolute inset-0 flex items-center justify-center bg-paper">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-accent"></div>
         </div>
       )}
       <div ref={videoRef} className="plyr-container w-full h-full" aria-label={title}></div>

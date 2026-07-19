@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ModeToggle from "@/components/ModeToggle";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -12,11 +13,11 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-paper border-b border-rule">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-serif font-bold text-ink">
               Zainab Ali | GameWeaver
             </Link>
           </div>
@@ -47,13 +48,14 @@ export default function Navigation() {
             >
               Resume
             </Link>
+            <ModeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-ink-soft hover:text-ink hover:bg-paper-raised focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent"
             >
               <span className="sr-only">Open main menu</span>
               {/* Icon for menu */}
@@ -98,7 +100,7 @@ export default function Navigation() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/"
-            className={`btn btn-md ${isActive("/about") ? "btn-active" : "btn-primary"}`}
+            className={`btn btn-md ${isActive("/") ? "btn-active" : "btn-primary"}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Home
@@ -112,18 +114,21 @@ export default function Navigation() {
           </Link>
           <Link
             href="/projects"
-            className={`btn btn-md ${isActive("/about") ? "btn-active" : "btn-primary"}`}
+            className={`btn btn-md ${isActive("/projects") ? "btn-active" : "btn-primary"}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Projects
           </Link>
           <Link
-            href="/contact"
-            className={`btn btn-md ${isActive("/about") ? "btn-active" : "btn-primary"}`}
+            href="/resume"
+            className={`btn btn-md ${isActive("/resume") ? "btn-active" : "btn-primary"}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            Contact
+            Resume
           </Link>
+          <div className="pt-2 flex justify-center">
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </nav>

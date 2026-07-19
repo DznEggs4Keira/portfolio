@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
-import { projects } from "@/data/projects"; // Ensure you have access to your projects data
+import { projects } from "@/data/projects";
+import SpotlightSection from "@/components/SpotlightSection";
 
 export default function Home() {
   // Filter or select the latest or spotlight projects
@@ -12,17 +12,17 @@ export default function Home() {
     <div className="max-w-6xl mx-auto p-6">
       <section className="py-12 flex flex-col items-center">
         <div className="max-w-3xl">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">
+          <h2 className="text-xl md:text-2xl font-serif font-semibold mb-4 text-center text-ink">
             An aspiring game developer, an avid video game player and a
             perennial student of the programming arts.
           </h2>
 
-          <div className="space-y-4 mt-8">
+          <div className="space-y-4 mt-8 text-ink-soft">
             <p>
               I am currently working at{" "}
               <a
                 href="https://ahead.group/en"
-                className="text-blue-600 hover:underline"
+                className="text-accent hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -43,7 +43,7 @@ export default function Home() {
               Jam 2026 which you can checkout{" "}
               <Link
                 href="/projects/5"
-                className="text-blue-600 hover:underline"
+                className="text-accent hover:underline"
               >
                 here
               </Link>
@@ -53,7 +53,7 @@ export default function Home() {
             <p>
               Furthermore, I am always looking for any opportunity to work
               alongside teams at game studios. You can checkout{" "}
-              <Link href="/resume" className="text-blue-600 hover:underline">
+              <Link href="/resume" className="text-accent hover:underline">
                 My Resume
               </Link>{" "}
               and let&apos;s find the right opportunity for both of us.
@@ -63,38 +63,10 @@ export default function Home() {
       </section>
       {/* Spotlight Projects Section */}
       <section className="py-12">
-        <h2 className="text-2xl font-semibold mb-6 text-center">
+        <h2 className="text-2xl font-serif font-semibold mb-6 text-center text-ink">
           Current Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {spotlightProjects.map((project) => (
-            <div
-              key={project.id}
-              className="project-card text-white p-4 rounded-lg shadow-lg"
-            >
-              <div className="relative w-full h-48 p-8">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={project.cardUrl}
-                    alt={project.title}
-                    fill
-                    style={{
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mt-4">{project.title}</h3>
-              <p className="text-gray-300">{project.description}</p>
-              <Link
-                href={`/projects/${project.id}`}
-                className="text-blue-600 hover:underline mt-2 block"
-              >
-                View Project →
-              </Link>
-            </div>
-          ))}
-        </div>
+        <SpotlightSection projects={spotlightProjects} />
       </section>
       <section className="py-12 flex flex-col items-center">
         <div className="flex gap-4 items-center flex-col sm:flex-row mt-8">
