@@ -6,7 +6,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedLayout from "@/components/AnimatedLayout";
 import { ModeProvider } from "@/components/ModeContext";
-import InkBackground from "@/components/InkBackground";
+import SpaceBackground from "@/components/SpaceBackground";
+import ScrollHint from "@/components/ScrollHint";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -52,7 +53,7 @@ export default function RootLayout({
         className={`${jetbrainsMono.variable} ${sourceSerif.variable} antialiased font-serif`}
       >
         <ModeProvider>
-          <InkBackground />
+          <SpaceBackground />
           <Navigation />
           <main className="pt-24">
             <AnimatedLayout>
@@ -60,6 +61,7 @@ export default function RootLayout({
             </AnimatedLayout>
           </main>
           <Footer />
+          <ScrollHint />
         </ModeProvider>
       </body>
     </html>

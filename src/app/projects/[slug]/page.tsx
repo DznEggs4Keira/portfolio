@@ -87,19 +87,6 @@ export default function ProjectDetail({
               <h2 className="text-2xl font-serif font-bold mb-4 text-ink">Overview</h2>
               <p className="text-ink-soft mb-4">{project.description}</p>
               <p className="text-ink-soft">{project.fullDescription}</p>
-
-              {project.contribution && project.contribution.length > 0 && (
-                <>
-                  <h3 className="font-mono text-xs uppercase tracking-wide text-accent mt-6 mb-3">
-                    My Contribution
-                  </h3>
-                  <ul className="list-disc list-inside space-y-1.5 text-ink-soft">
-                    {project.contribution.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
             </div>
           </div>
 
@@ -169,6 +156,17 @@ export default function ProjectDetail({
             </div>
           </div>
         </div>
+        {/* My Contribution */}
+        {project.contribution && project.contribution.length > 0 && (
+          <div className="project-card p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-serif font-bold mb-4 text-ink">My Contribution</h2>
+            <ul className="list-disc list-inside space-y-1.5 text-ink-soft">
+              {project.contribution.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         {/* Project Gallery */}
         {project.galleryImages && project.galleryImages.length > 0 && (
           <div className="mb-8">
