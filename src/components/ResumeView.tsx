@@ -15,6 +15,47 @@ export default function ResumeView({ data }: { data: ResumeData }) {
 
   return (
     <div className="project-card p-8 rounded-lg">
+      <div className="text-center mb-8 pb-8 border-b border-rule">
+        <h1 className="text-3xl font-serif font-bold text-ink mb-2">Zainab Fatima Ali</h1>
+        <div className="flex flex-wrap justify-center gap-x-2 font-mono text-xs text-ink-faint mb-3">
+          <span>+49 157 34449632</span>
+          <span>·</span>
+          <a href="mailto:zainab_ali96@outlook.com" className="text-ink-soft hover:text-accent hover:underline">
+            zainab_ali96@outlook.com
+          </a>
+          <span>·</span>
+          <a
+            href="https://www.gameweaver.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-soft hover:text-accent hover:underline"
+          >
+            gameweaver.dev
+          </a>
+          <span>·</span>
+          <a
+            href="https://github.com/DznEggs4Keira"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-soft hover:text-accent hover:underline"
+          >
+            GitHub
+          </a>
+          <span>·</span>
+          <a
+            href="https://www.linkedin.com/in/zainab-ali-a15077181/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-soft hover:text-accent hover:underline"
+          >
+            LinkedIn
+          </a>
+        </div>
+        <p className="font-mono text-xs font-semibold uppercase tracking-wide text-accent">
+          Fully eligible to work in Germany — no sponsorship required
+        </p>
+      </div>
+
       <div className="mb-8">
         <p className="font-mono text-xs uppercase tracking-wide text-accent mb-2">{d.role}</p>
         <p className="text-ink-soft italic">{d.tagline}</p>
