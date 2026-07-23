@@ -1,3 +1,9 @@
+export interface DevLogEntry {
+  date: string;
+  title?: string;
+  text: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -20,6 +26,7 @@ export interface Project {
   challenges?: string;
   learnings?: string;
   contribution?: string[];
+  devLogs?: DevLogEntry[];
   isSpotlight?: boolean;
   cardBg?: "dark";
 }
@@ -34,7 +41,7 @@ export const projects: Project[] = [
     focus: "backend",
     description: "Your AI Repair Assistant. Repairs in record time!",
     fullDescription: "Qira is an AI-powered repair assistant developed by AHEAD GmbH which provides a web-based platform for workshops to quickly and accurately diagnose and repair vehicles. We leverage the vast databases of OEM repair manuals available under the right to repair legislation to provide step-by-step repair instructions, diagnostic tools, and parts identification. Qira aims to streamline the repair process, reduce downtime, and improve the overall efficiency of workshops by harnessing the power of AI to assist technicians in their daily tasks.",
-    technologies: ["NodeJS", "NestJS", "Typescript", "Angular", "Python"],
+    technologies: ["NodeJS", "NestJS", "Typescript", "Angular", "Python", "Claude Code"],
     cardUrl: "/qira/qira-card.avif",
     cardBg: "dark",
     videoUrl: "https://youtu.be/oe7XgNASmIc",
@@ -52,6 +59,7 @@ export const projects: Project[] = [
       "Built a Python data scraping pipeline, indexing content into Elasticsearch to power ML document retrieval",
       "Integrated Azure Blob Storage for image persistence across the AI pipeline",
       "Engineered LLM prompt architecture — query refinement, document selection, and context injection for accurate AI responses",
+      "Build agent-first with Claude Code: Opus/Fable in plan mode for architecture decisions, Sonnet for implementation, Git worktrees for parallel tickets, and a CLAUDE.md defining conventions every agent instance follows",
       "Led DevOps modernization: containerized environments in Docker, evaluating Docker Swarm for blue-green deployments and Ansible for infrastructure automation",
       "Self-taught systems administration managing Google Workspace, MDM tools, and company access systems",
       "Researched and configured Tableau dashboards for product analytics",
@@ -75,6 +83,9 @@ export const projects: Project[] = [
     features: [],
     challenges: "",
     learnings: "",
+    contribution: [
+      "Built API integrations connecting 3 platforms (Ruby on Rails, NestJS, HubSpot), syncing 30,000+ records",
+    ],
   },
   {
     id: 2,
@@ -152,6 +163,41 @@ export const projects: Project[] = [
     features: [],
     challenges: "",
     learnings: "",
+    contribution: [
+      "Sole developer on this personal passion project, built alongside a friend — architecting the project from scratch while building hands-on depth in Unreal Engine and C++",
+    ],
+    devLogs: [
+      {
+        date: "10 April 2026",
+        title: "#01 — Establishing the Foundations",
+        text: "First session. Locked in the foundational architecture: a 2D fish-tank management game built as a locked-camera 3D scene in UE5.7/C++ (chosen over Paper2D for better tooling support). Settled on a data-first build order — UMG sidebar as a visual test canvas, then a C++ inventory system that broadcasts an OnInventoryChanged delegate (UI listens, never talks back), owned by the Player class, wired together through the HUD. Also decided the sidebar would use a collapsible accordion pattern. Next: scaffold the UInventoryWidget C++ base class.",
+      },
+      {
+        date: "13 April 2026",
+        title: "#02.1 — Surface Snapping via Line Trace",
+        text: "Solved surface-snapping for the placement system: a downward line trace from the cursor hits the plane mesh directly and returns the impact point, so placed objects sit cleanly on the surface without clipping. This means no separate collision or height maps are needed from the artist — real mesh geometry with Simple Collision enabled is enough.",
+      },
+      {
+        date: "13 April 2026",
+        title: "#02.2 — Rethinking the World as Scene Clusters",
+        text: "A pure architecture session — no code, and rightly so. The concept evolved significantly after a new art mockup: instead of flat UMG overlays, the game is now a persistent world of scene clusters connected by fast camera 'swoosh-and-settle' transitions, with a shadowbox parallax effect where depth layers subtly rotate around a pivot based on mouse position (background rotates least, foreground most). Locked in the core architecture spine: a PlayerController handling all raycasting, actors implementing an IInteractable interface to stay decoupled, and a camera transition system tying it together.",
+      },
+      {
+        date: "8 March 2026",
+        title: "#03 — First Environment & CRT Screens",
+        text: "Starting from a completely empty map, learning Unreal from scratch. Got the base environment running (sky sphere, directional + sky light) and built the four in-world CRT monitor screens using SceneCapture2D actors feeding Render Targets, displayed via a shared master material. Iterated the CRT shader from a static scanline effect into a rolling scan-bar (Time → Frac scrolling a dark band vertically) after debugging a few disconnected node chains. Wrapped up by snapping the editor camera to the intended player viewpoint.",
+      },
+      {
+        date: "25 May 2026",
+        title: "#04 — CRT Monitor Material: Scan Band Effect",
+        text: "Added a travelling static/noise band to the CRT monitor material. The first attempt pulsed the whole screen instead of showing a localized band — turned out the graph was missing a UV spatial mask (no TexCoord node), so the noise had no sense of screen position. Fixed by comparing TexCoord[0]'s V channel against a Frac(Time × Speed) band position, then shaping it with Abs → OneMinus → Saturate → Power for band tightness. Next: wire this up properly and consider driving speed via a Dynamic Material Parameter.",
+      },
+      {
+        date: "8 June 2025",
+        title: "#05 — Static Fix & Camera Architecture",
+        text: "Fixed the digital static post-process effect for the CRT feeds — it needed to live in each cube's material directly (sampling the render target) rather than as a post-process on the SceneCapture2D, since that only affects the capture's internal framebuffer, not what the material actually samples. Then moved into camera-system architecture: a fixed first-person view where the player occupies discrete named positions (e.g. a desk with two poses, a cash register with one), transitioning via clicking interactables with constrained freelook per pose. Landed on a three-class split — ACameraAnchor (data-only, per-position transform + freelook cone), ACthuluCameraManager (owns transition/lerp logic), ACthuluPlayerController (thin, forwards clicks to the camera manager). ACameraAnchor is fully written; the camera manager is next.",
+      },
+    ],
     isSpotlight: true,
   },
     {

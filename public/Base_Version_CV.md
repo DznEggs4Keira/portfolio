@@ -1,6 +1,7 @@
 # Zainab Fatima Ali
 **Gameplay Programmer | Based in Hamburg, Germany**
 **Phone:** +49 157 34449632 | [**Email**](zainab_ali96@outlook.com) | [**Portfolio**](https://www.gameweaver.dev/) | [**Github**](https://github.com/DznEggs4Keira) | [**LinkedIn**](https://www.linkedin.com/in/zainab-ali-a15077181/)
+**_Visa status: Fully eligible to work in Germany without the need of sponsorship
 
 ---
 ## Work Experience
@@ -12,6 +13,7 @@
 - Built data scraping pipeline in Python — extracting and indexing content into Elasticsearch to power ML document retrieval
 - Integrated Azure Blob Storage for image persistence across the AI pipeline
 - Engineering LLM prompt architecture — query refinement, document ID selection, and context injection for accurate AI responses
+- Build agent-first with Claude Code: Opus/Fable in plan mode for architecture decisions, Sonnet for implementation, Git worktrees for parallel tickets, and a CLAUDE.md defining conventions every agent instance follows
 - Leading DevOps modernisation: containerised environments in Docker, evaluating Docker Swarm for blue-green deployments and Ansible for infrastructure automation
 - Self-taught systems administration managing Google Workspace, MDM tools, and company access systems
 - Researched and configured Tableau dashboards for product analytics
@@ -54,4 +56,4 @@ Designed 5+ puzzle riddles, implemented full UI system, managed Git workflow for
 ---
 ## Skills
 **Languages:** English (Fluent), Urdu (Native), Punjabi (Native)  
-**Technologies:** C#, Unity Engine, C++, Unreal Engine, TypeScript, Git, cross-discipline collaboration, NestJS, Angular, React, Three.js, Ruby on Rails, PostgreSQL, Docker, CI/CD (GitHub Actions)
+**Technologies:** C#, Unity Engine, C++, Unreal Engine, TypeScript, Git, cross-discipline collaboration, NestJS, Angular, React, Three.js, Ruby on Rails, PostgreSQL, Docker, CI/CD (GitHub Actions), Claude Code
