@@ -167,6 +167,27 @@ export default function ProjectDetail({
             </ul>
           </div>
         )}
+        {/* Dev Logs */}
+        {project.devLogs && project.devLogs.length > 0 && (
+          <div className="project-card p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-serif font-bold mb-4 text-ink">Dev Logs</h2>
+            <div className="space-y-6">
+              {[...project.devLogs].reverse().map((entry, i) => (
+                <div key={i} className="border-l-2 border-rule pl-4">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <span className="font-mono text-xs uppercase tracking-wide text-accent">
+                      {entry.date}
+                    </span>
+                    {entry.title && (
+                      <span className="font-serif font-bold text-ink">{entry.title}</span>
+                    )}
+                  </div>
+                  <p className="text-ink-soft">{entry.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {/* Project Gallery */}
         {project.galleryImages && project.galleryImages.length > 0 && (
           <div className="mb-8">

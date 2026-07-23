@@ -34,7 +34,9 @@ const CV_URL = "https://cv.gameweaver.dev";
 
 export async function getResumeData(): Promise<ResumeData | null> {
   try {
-    const res = await fetch(CV_URL, { next: { revalidate: 86400 } });
+    // Always fetch fresh — this is a low-traffic resume page, so there's no
+    // meaningful cost to skipping the cache entirely for real-time updates.
+    const res = await fetch(CV_URL, { cache: "no-store" });
     if (!res.ok) return null;
 
     const html = await res.text();
